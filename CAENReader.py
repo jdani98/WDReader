@@ -10,7 +10,7 @@ Created on Tue Oct 19 11:31:56 2021
 from os import path
 import numpy
 import struct
-import modules_for_python.events as evm
+import events as evm
 #import events as evm
 import os
 #import matplotlib.pyplot as plt
