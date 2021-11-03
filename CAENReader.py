@@ -10,10 +10,8 @@ Created on Tue Oct 19 11:31:56 2021
 from os import path
 import numpy
 import struct
-import modules_for_python.events as evm
-#import events as evm
+import events as evm
 import os
-#import matplotlib.pyplot as plt
 
 # ==================================
 # Class to read WaveDump data files
@@ -295,45 +293,3 @@ class readChannels:
         for iev,evento in (self.eventsobj).items():
             eventos[iev] = evento.make_events(nevent)
         return eventos
-    
-        
-
-"""
-### Naive test
-#fichero = WDReader('../DATA/antenas_210909/wave0.txt')
-#fichero = WDReader('../DATA/ant_header_binascii_compar/wave0.dat')
-fichero = WDReader('../DATA/waves_211018_1828_2h52/wave2.dat')
-#datos   = fichero.read_flat()
-#channel, datos = fichero.autoread()
-
-#print(type(datos))
-#print(datos)
-#print(datos[0])
-
-evento = fichero.make_events(0)
-
-print(evento.ADC_counts())
-print(evento.channel())
-print(evento.stime())
-print(evento.ADC_range())
-print(evento.Vpp())
-print(evento.nsamples())
-print(evento.ADC_rebase())
-print(evento.evn_selection(2,4))
-
-
-fig = plt.figure(0)
-ax1 = fig.add_subplot()
-evento.evn_display(ax1)
-"""
-
-"""
-### Naive test 2
-datos = readChannels('../DATA/waves_211018_1828_2h52')
-DATA = datos.data()
-nev  = datos.nevents()
-lista= datos.files_list()
-print(nev,lista)
-
-datos.make_events(0)
-"""
